@@ -1,15 +1,15 @@
 /// <reference types="Cypress" />
 
-const PublicHomePageChaturbate = () => {
+const PublicHomePageMMLLC = () => {
     beforeEach(() => {
       // Code to be run before each individual `it` block
       System.visitHomePage();
       HomePage.closeAgreeToTermsModal();
     });
 
-    describe("Chaturbate UI tests", () => {
+    describe("MMLLC UI tests", () => {
       it("Verify room name and URL", () => {
-        System.assertURL("chaturbate");
+        System.assertURL(url);
 
         HomePage.clickVideoAndVerifyURL();
 
@@ -39,8 +39,8 @@ const PublicHomePageChaturbate = () => {
 
   export default PublicHomePageChaturbate;
 
-  describe("public-homepage-chaturbate", function () {
-    PublicHomePageChaturbate();
+  describe("public-homepage-MMLLC", function () {
+    PublicHomePageMMLLC();
   });
 
   // --------------------------------------------------------------------
@@ -133,8 +133,6 @@ const PublicHomePageChaturbate = () => {
         });
     }
 
-    // Note: I was working to refine this but was running into some secuirty issues on the website
-    // and was blocked running tests.
     static verifyScanCam() {
       cy.log("**verifyScanCam()**");
       cy.url().then((url) => {
